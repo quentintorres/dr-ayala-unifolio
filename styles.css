@@ -216,20 +216,18 @@ h1 {
 }
 
 .monogram {
-  height: 230px;
+  height: 280px;
   border-radius: 20px;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.45), transparent 40%),
-    linear-gradient(160deg, #f7e7df, #efe6d4 45%, #e7eef8);
+  overflow: hidden;
+  background: #efe6da;
 }
 
-.monogram span {
-  font-family: var(--serif);
-  font-size: 5.4rem;
-  letter-spacing: -0.06em;
-  line-height: 1;
+.monogram img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 .person-row { padding: 0.85rem 0.45rem 0.2rem; }
@@ -402,17 +400,30 @@ h2 {
 .about-copy h2 { max-width: 12ch; }
 
 .about-panel {
+  position: relative;
   min-height: 420px;
   border-radius: 28px;
-  background-color: #eef1f4;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 8 L44 26 L26 44 L8 26 Z' fill='none' stroke='%23c9d0d8' stroke-width='1'/%3E%3C/svg%3E");
-  background-position: right center;
+  overflow: hidden;
   display: grid;
-  place-items: center;
+  place-items: end start;
   padding: 1.5rem;
+  background: #1c1c1c;
 }
 
-.about-card { padding: 1.6rem 1.5rem; max-width: 26rem; }
+.about-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.about-card {
+  position: relative;
+  padding: 1.6rem 1.5rem;
+  max-width: 26rem;
+}
 
 .about-kicker {
   margin: 0;
@@ -465,7 +476,9 @@ h2 {
 
 .art-a { background: linear-gradient(145deg, #f8e7df, #f3efe6 50%, #e7eef8); }
 .art-b { background: repeating-linear-gradient(135deg, #f7f4ee, #f7f4ee 12px, #efe6da 12px, #efe6da 13px); }
-.art-c { background: linear-gradient(#111, #111) center/100% 2px no-repeat, linear-gradient(#111, #111) center/2px 100% no-repeat, #f6f3ee; }
+.art-c {
+  background: #111 url("/images/show.jpg") center 22% / cover no-repeat;
+}
 .art-d { background: radial-gradient(circle at 70% 30%, #ffe1d4, transparent 42%), #f4efe8; }
 .art-e { background: radial-gradient(circle at 30% 70%, #e5e8ff, transparent 46%), #f6f3ee; }
 
